@@ -155,6 +155,9 @@
 
 ; ------------------------- Painter Helpers -------------------------
 ; Procedures for the creation of painters
+;
+; A painter is a function that takes a frame as input, then draws
+; a shape inside that frame.
 
 ; Turn a list of points (represented by vectors) into a list of segments
 ; that connects the points.
@@ -185,7 +188,7 @@
 ; Procedures that modify painters.
 
 ; I found it cleaner to make a transform-painter procedure
-; that acts on a frame, and to move the business of
+; that uses frames, and to move the business of
 ; projecting frames into each other at the abstraction
 ; layer of frames. That way the painter layer is completely
 ; agnostic to frame details.
@@ -193,9 +196,9 @@
  (lambda (frame)
    (painter (nest-frame frame-trans frame))))
 
-(define (flip-vert painter) (transform painter flip-vert-frame))
+(define (flip-vert painter) (transform-painter painter flip-vert-frame))
 
-(define (flip-horiz painter) (transform painter flip-hor-frame))
+(define (flip-horiz painter) (transform-painter painter flip-hor-frame))
 
 (define (shrink-to-upper-right painter)
   (transform-painter painter top-right-frame))
