@@ -8,7 +8,7 @@
 (define (sum? x)
   (and (pair? x) (eq? (cadr x) '+)))
 
-(define addend car)2
+(define addend car)
 
 (define augend caddr)
 
