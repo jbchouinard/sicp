@@ -24,4 +24,8 @@
     (set-car! lst el)
     (set-cdr! lst (cons head rest))))
 
-(define (nth n lst) nil)
+(define (nth n lst)
+  (cond
+    ((null? lst) (error "NTH -- index too large"))
+    ((= n 0) (car lst))
+    (else (nth (- n 1) (cdr lst)))))
