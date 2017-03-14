@@ -16,3 +16,12 @@
 
 (define (load-module module)
   (load (string-append libpath (string-replace module #\. #\/) ".scm")))
+
+; ------------------------- List Procedures -------------------------
+(define (insert! lst el)
+  (let ((head (car lst))
+        (rest (cdr lst)))
+    (set-car! lst el)
+    (set-cdr! lst (cons head rest))))
+
+(define (nth n lst) nil)
