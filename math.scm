@@ -2,7 +2,7 @@
 
 (load "~/.schemerc.scm")
 
-(load-module "sicp.meta")
+(load-module "sicp.func")
 
 ; ------------------------- Basic Math -------------------------
 (define (inc x) (+ x 1))

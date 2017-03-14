@@ -1,4 +1,4 @@
-; Basic Meta Package
+; Basic Higher Order Functions Package
 
 (load "~/.schemerc.scm")
 
