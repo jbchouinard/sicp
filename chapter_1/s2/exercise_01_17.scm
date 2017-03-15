@@ -1,6 +1,6 @@
 ; SICP Exercise 1.17
 
-(load "~/.schemerc.scm")
+
 
 (define (double x) (* x 2))
 

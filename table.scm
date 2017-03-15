@@ -1,4 +1,4 @@
-(load "~/.schemerc.scm")
+
 
 (define (make-table)
   (list 'table 'end))

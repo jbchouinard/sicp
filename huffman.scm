@@ -1,7 +1,7 @@
 ; Huffman Encoding Package
 ; From SICP s2.3
 
-(load "~/.schemerc.scm")
+
 
 
 ; Tree procedures

@@ -1,6 +1,6 @@
 ; SICP Exercise 1.40
 
-(load "~/.schemerc.scm")
+
 
 ; Define a procedure cubic that can be used together with the newtons-method procedure in ; expressions of the form;
 ;

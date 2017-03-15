@@ -1,6 +1,6 @@
 ; SICP Exercise 2.40
 
-(load "~/.schemerc.scm")
+
 
 ; Generate all unique pairs (i, j) such that 1 <= j < i <= n
 (define (unique-pairs n)

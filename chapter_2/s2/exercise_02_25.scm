@@ -1,6 +1,6 @@
 ; SICP Exercise 2.25
 
-(load "~/.schemerc.scm")
+
 
 ;Give combinations of cars and cdrs that will pick 7 from each of the following lists:
 

@@ -1,6 +1,6 @@
 ; SICP Exercise 2.38
 
-(load "~/.schemerc.scm")
+
 
 ; Accumulate as defined in s2.2.3 applies the operator recursively on the list,
 ; so the values are accumulated from right to left.

@@ -1,6 +1,6 @@
 ; SICP Exercise 2.11
 
-(load "~/.schemerc.scm")
+
 
 (define (mul-interval x y)
   (cond ((> (lower-bound x) 0)

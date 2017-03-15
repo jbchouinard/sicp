@@ -1,6 +1,6 @@
 ; SICP Exercise 2.32
 
-(load "~/.schemerc.scm")
+
 
 ; We can represent a set as a list of distinct elements, and we can represent the set of all
 ; subsets of the set as a list of lists. For example, if the set is (1 2 3), then the set of

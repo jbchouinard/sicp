@@ -1,6 +1,6 @@
 ; SICP Exercise 2.30
 
-(load "~/.schemerc.scm")
+
 
 ; Square-tree directly
 (define nil (list))

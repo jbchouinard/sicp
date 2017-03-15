@@ -1,6 +1,6 @@
 ; SICP Exercise 1.32
 
-(load "~/.schemerc.scm")
+
 
 ; Iterative process
 (define (accumulate combiner null-value term a next b)

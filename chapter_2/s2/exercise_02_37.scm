@@ -1,6 +1,6 @@
 ; SICP Exercise 2.37
 
-(load "~/.schemerc.scm")
+
 
 (define (dot-product v w)
   (accumulate + 0 (map * v w)))

@@ -1,6 +1,6 @@
 ; SICP Exercise 1.22
 
-(load "~/.schemerc.scm")
+
 
 ; Searching for divisors
 (define (smallest-divisor n)

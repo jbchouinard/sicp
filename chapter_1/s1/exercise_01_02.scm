@@ -1,6 +1,6 @@
 ; SICP Exercise 1.2
 
-(load "~/.schemerc.scm")
+
 
 (/  (+  5
         4

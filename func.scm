@@ -1,6 +1,6 @@
 ; Basic Higher Order Functions Package
 
-(load "~/.schemerc.scm")
+
 
 
 (define (accumulate combiner null-value term a next b)

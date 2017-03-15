@@ -1,6 +1,6 @@
 ; SICP Exercise 2.33
 
-(load "~/.schemerc.scm")
+
 
 (define (accumulate op initial sequence)
   (if (null? sequence)

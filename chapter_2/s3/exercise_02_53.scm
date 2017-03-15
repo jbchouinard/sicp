@@ -1,6 +1,6 @@
 ; SICP Exercise 2.53
 
-(load "~/.schemerc.scm")
+
 
 ;What would the interpreter print in response to evaluating each of the following expressions?
 ;

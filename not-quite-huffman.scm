@@ -2,7 +2,7 @@
 ; This uses a different algorithm that I came up with when looking
 ; at Huffman trees before I actually looked up the Huffman algorithm.
 
-(load "~/.schemerc.scm")
+
 
 
 ; ------------------------- Symbol Table Procedures -------------------------

@@ -1,6 +1,6 @@
 ; SICP Exercise 2.51
 
-(load "~/.schemerc.scm")
+
 
 ; Return a frame that is equivalent of nesting frame-in into frame-out
 (define (nest-frame frame-in frame-out)

@@ -1,6 +1,6 @@
 ; SICP Exercise 1.36
 
-(load "~/.schemerc.scm")
+
 
 ; Modify fixed-point so that it prints the sequence of approximations it generates,
 ; using the newline and display primitives shown in exercise 1.22. Then find a solution

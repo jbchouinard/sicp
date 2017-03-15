@@ -1,6 +1,6 @@
 ; SICP Exercise 2.21
 
-(load "~/.schemerc.scm")
+
 
 (define (square-list items)
   (if (null? items)

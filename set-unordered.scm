@@ -1,6 +1,6 @@
 ; SICP Set Package - Unordered List Representation
 
-(load "~/.schemerc.scm")
+
 
 (define empty-set '())
 

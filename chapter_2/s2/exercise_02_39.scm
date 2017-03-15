@@ -1,6 +1,6 @@
 ; SICP Exercise 2.39
 
-(load "~/.schemerc.scm")
+
 
 (define (reverse-right sequence)
   (fold-right (lambda (x y) (append y (list x))) nil sequence))

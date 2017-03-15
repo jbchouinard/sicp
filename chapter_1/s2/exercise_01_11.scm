@@ -1,6 +1,6 @@
 ; SICP Exercise 1.11
 
-(load "~/.schemerc.scm")
+
 
 ; recursive process
 (define (f n)

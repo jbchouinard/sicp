@@ -1,6 +1,6 @@
 ; SICP Exercise 1.24
 
-(load "~/.schemerc.scm")
+
 
 ; Fermat test
 (define (expmod base exp m)

@@ -1,6 +1,6 @@
 ; SICP Exercise 2.57
 
-(load "~/.schemerc.scm")
+
 
 ; Prefix notation, n-ary operators
 (define addend cadr)

@@ -1,6 +1,6 @@
 ; SICP Exercise 2.14
 
-(load "~/.schemerc.scm")
+
 
 (define (par1 r1 r2)
   (div (mul r1 r2)

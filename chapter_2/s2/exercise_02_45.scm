@@ -1,6 +1,6 @@
 ; SICP Exercise 2.45
 
-(load "~/.schemerc.scm")
+
 
 ; Right-split and up-split can be expressed as instances of a general splitting operation. Define a procedure split with the property that evaluating
 ;

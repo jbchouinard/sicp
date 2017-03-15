@@ -1,6 +1,6 @@
 ; SICP Exercise 2.42
 
-(load "~/.schemerc.scm")
+
 
 (define enumerate-interval range-1)
 

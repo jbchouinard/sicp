@@ -1,6 +1,6 @@
 ; SICP Interval Arithmetic Package
 
-(load "~/.schemerc.scm")
+
 
 (load-module "sicp.math")
 

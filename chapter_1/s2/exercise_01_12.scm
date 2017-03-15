@@ -1,6 +1,6 @@
 ; SICP Exercise 1.12
 
-(load "~/.schemerc.scm")
+
 
 ; Find ith element of the jth row of Pascal's triangle
 (define (pascal-row j i)

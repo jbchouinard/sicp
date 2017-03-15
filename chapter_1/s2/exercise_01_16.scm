@@ -1,6 +1,6 @@
 ; SICP Exercise 1.16
 
-(load "~/.schemerc.scm")
+
 
 (define (even? n)
   (= (remainder n 2) 0))

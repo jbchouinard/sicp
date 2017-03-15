@@ -1,6 +1,6 @@
 ; SICP Exercise 1.28
 
-(load "~/.schemerc.scm")
+
 
 (define (square x) (* x x))
 

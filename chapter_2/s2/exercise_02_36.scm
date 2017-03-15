@@ -1,6 +1,6 @@
 ; SICP Exercise 2.36
 
-(load "~/.schemerc.scm")
+
 
 (define (accumulate-n op init seqs)
   (if (null? (car seqs))

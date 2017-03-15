@@ -1,6 +1,6 @@
 ; SICP Exercise 2.55
 
-(load "~/.schemerc.scm")
+
 
 ; The expression:
 ; (car ''abracadabra)

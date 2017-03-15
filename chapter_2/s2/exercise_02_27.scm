@@ -1,6 +1,6 @@
 ; SICP Exercise 2.27
 
-(load "~/.schemerc.scm")
+
 
 (define nil (list))
 

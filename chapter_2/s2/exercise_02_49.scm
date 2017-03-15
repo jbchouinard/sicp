@@ -1,6 +1,6 @@
 ; SICP Exercise 2.49
 
-(load "~/.schemerc.scm")
+
 
 ; Use segments->painter to define the following primitive painters:
 

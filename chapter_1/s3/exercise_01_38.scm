@@ -1,6 +1,6 @@
 ; SICP Exercise 1.38
 
-(load "~/.schemerc.scm")
+
 
 (define (n k) 1.0)
 

@@ -1,6 +1,6 @@
 ; SICP Set Package - Binary Tree Representation
 
-(load "~/.schemerc.scm")
+
 
 
 ; ------------------------- Tree Procedures -------------------------

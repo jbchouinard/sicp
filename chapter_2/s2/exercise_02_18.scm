@@ -1,6 +1,6 @@
 ; SICP Exercise 2.18
 
-(load "~/.schemerc.scm")
+
 
 (define (reverse lst)
   (define (reverse-iter llst rlst)

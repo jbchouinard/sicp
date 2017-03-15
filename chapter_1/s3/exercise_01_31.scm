@@ -1,6 +1,6 @@
 ; SICP Exercise 1.31
 
-(load "~/.schemerc.scm")
+
 
 ; Iterative process
 (define (product term a next b)

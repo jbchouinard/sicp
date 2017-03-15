@@ -1,6 +1,6 @@
 ; SICP Base Symbolic Algebra Package
 
-(load "~/.schemerc.scm")
+
 
 ; ------------------------- Helper Procedures -------------------------
 

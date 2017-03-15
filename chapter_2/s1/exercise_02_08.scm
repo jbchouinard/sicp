@@ -1,6 +1,6 @@
 ; SICP Exercise 2.8
 
-(load "~/.schemerc.scm")
+
 
 (define (sub-interval x y)
   (make-interval (- (lower-bound x) (upper-bound y))

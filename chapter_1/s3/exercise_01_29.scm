@@ -1,6 +1,6 @@
 ; SICP Exercise 1.29
 
-(load "~/.schemerc.scm")
+
 
 (define (sum term a next b)
     (if (> a b)

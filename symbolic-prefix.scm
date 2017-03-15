@@ -1,6 +1,6 @@
 ; ------------------------- Symbolic Package - Prefix Notation -------------------------
 
-(load "~/.schemerc.scm")
+
 
 (load-module "sicp.symbolic-common")
 

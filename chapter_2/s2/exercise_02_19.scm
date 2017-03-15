@@ -1,6 +1,6 @@
 ; SICP Exercise 2.19
 
-(load "~/.schemerc.scm")
+
 
 ; Define the procedures first-denomination, except-first-denomination, and no-more? in terms of primitive operations on list structures.
 

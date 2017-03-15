@@ -1,6 +1,6 @@
 ; SICP Exercise 2.44
 
-(load "~/.schemerc.scm")
+
 
 (define (up-split painter n)
   (if (= n 0)

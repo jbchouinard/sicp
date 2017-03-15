@@ -1,6 +1,6 @@
 ; SICP Exercise 2.64
 
-(load "~/.schemerc.scm")
+
 
 (load-module "sicp.set-binary-tree")
 (define (reload) (load "exercise_02_64.scm"))

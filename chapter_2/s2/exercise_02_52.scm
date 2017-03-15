@@ -1,6 +1,6 @@
 ; SICP Exercise 2.52
 
-(load "~/.schemerc.scm")
+
 
 (define (make-recursive-painter painter frame-trans n)
   (lambda (frame-outer)

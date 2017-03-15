@@ -1,6 +1,6 @@
 ; SICP Data Manipulation Package
 
-(load "~/.schemerc.scm")
+
 
 ; ------------------------- List Operations -------------------------
 (define (for-earch f lst)

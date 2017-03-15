@@ -1,6 +1,6 @@
 ; SICP Picture Language Package
 
-(load "~/.schemerc.scm")
+
 
 
 ; ------------------------- Vectors and Segments -------------------------

@@ -1,6 +1,6 @@
 ; SICP Math Package
 
-(load "~/.schemerc.scm")
+
 
 (load-module "sicp.func")
 

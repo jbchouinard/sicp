@@ -1,6 +1,6 @@
 ; SICP Exercise 2.10
 
-(load "~/.schemerc.scm")
+
 
 (define (div x y)
   (if (= 0 (width y))

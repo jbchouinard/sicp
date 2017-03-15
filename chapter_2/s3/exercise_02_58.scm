@@ -1,6 +1,6 @@
 ; SICP Exercise 2.58
 
-(load "~/.schemerc.scm")
+
 
 (load-module "sicp.symbolic-common")
 

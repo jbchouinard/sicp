@@ -1,6 +1,6 @@
 ; SICP Exercise 2.47
 
-(load "~/.schemerc.scm")
+
 
 ; First implementation
 (define (make-frame origin edge1 edge2)

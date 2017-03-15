@@ -1,6 +1,6 @@
 ; SICP Exercise 2.66
 
-(load "~/.schemerc.scm")
+
 
 (define (reload) (load "exercise_02_66.scm"))
 (define (load-next) (load "exercise_02_67.scm"))

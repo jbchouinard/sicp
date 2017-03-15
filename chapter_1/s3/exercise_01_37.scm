@@ -1,6 +1,6 @@
 ; SICP Exercise 1.37
 
-(load "~/.schemerc.scm")
+
 
 (define (cont-frac n d k)
   (define (cont-frac-rec i)

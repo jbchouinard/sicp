@@ -1,6 +1,6 @@
 ; SICP Exercise 2.28
 
-(load "~/.schemerc.scm")
+
 
 ;Write a procedure fringe that takes as argument a tree (represented as a list) and
 ;returns a list whose el2ements are all the leaves of the tree arranged in left-to-right order.

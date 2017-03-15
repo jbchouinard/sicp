@@ -1,6 +1,6 @@
 ; SICP Exercise 2.20
 
-(load "~/.schemerc.scm")
+
 
 (define (filter pred? lst)
   (define (make-lst llst rlst)

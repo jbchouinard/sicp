@@ -1,6 +1,6 @@
 ; SICP Exercise 2.56
 
-(load "~/.schemerc.scm")
+
 
 (define (exponentiation? x)
  (and (pair? x) (eq? (car x) '**)))

@@ -1,6 +1,6 @@
 ; SICP Exercise 2.9
 
-(load "~/.schemerc.scm")
+
 
 (define (width-interval x)
   (/ (- (upper-bound x) (lower-bound x)) 2))

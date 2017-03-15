@@ -1,6 +1,6 @@
 ; SICP Exercise 1.35
 
-(load "~/.schemerc.scm")
+
 
 (define tolerance 0.0000001)
 

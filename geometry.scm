@@ -1,6 +1,6 @@
 ; SICP Geometry Package
 
-(load "~/.schemerc.scm")
+
 
 ; Points
 (define (make-point x y)

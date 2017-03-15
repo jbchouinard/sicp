@@ -1,6 +1,6 @@
 ; SICP Exercise 2.54
 
-(load "~/.schemerc.scm")
+
 
 (define (equal? lst1 lst2)
   (cond ((not (eq? (pair? lst1) (pair? lst2))) #f)

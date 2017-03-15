@@ -1,6 +1,6 @@
 ; SICP Exercise 2.5
 
-(load "~/.schemerc.scm")
+
 
 (define (factor-count n fac)
   (define (iter k i)
