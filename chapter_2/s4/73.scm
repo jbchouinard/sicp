@@ -33,9 +33,16 @@
       (make-sum
         (make-product f1 (deriv f2 var))
         (make-product (deriv f1 var) f2))))
+  (define (make-exponent base power)
+    (list '^ base power))
+  (define (deriv-expnt expnt var)
+    (let ((base (car expnt))
+	  (power (cadr expnt)))
+      (
   ; Interface
   (put 'deriv '+ deriv-sum)
   (put 'deriv '* deriv-product)
+  (put 'deriv '^ deriv-expnt)
   'done)
 
 (define (install-deriv-simplify)
