@@ -141,6 +141,13 @@
 (define (close-enough? x y)
   (< (abs (- x y)) tolerance))
 
+(define (iterative-improve good-enough? improve)
+  (define (iter guess)
+    (let ((next (improve guess)))
+      (if (good-enough? guess next)
+        next
+        (iter next)))))
+
 ; Find an approx. fixed point of the procedure f
 ; x is a fixed point of the function  y -> f(y) iff
 ;    f(x) = x
