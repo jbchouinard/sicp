@@ -1,4 +1,4 @@
-; Scheme Initialization
+; Scheme Customizations
 
 ; ------------------------- Settings -------------------------
 (define libpath "~/.local/lib/scheme/")

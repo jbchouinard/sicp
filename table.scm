@@ -58,3 +58,11 @@
       (table-set! subtbl k val)
       (set-iter (table-getset! subtbl k make-table) (car ks) (cdr ks))))
   (set-iter table (car keys) (cdr keys)))
+
+(define (make-put mytable)
+  (lambda (key1 key2 val)
+    (table-rec-set! mytable (list key1 key2) val)))
+
+(define (make-get mytable)
+  (lambda (key1 key2)
+    (table-rec-lookup mytable (list key1 key2))))
