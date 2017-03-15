@@ -3,7 +3,6 @@ import sys
 
 txt = """; SICP Exercise {c}.{i}
 
-(define (reload) (load "{i}.scm"))
 """
 
 if __name__ == '__main__':
