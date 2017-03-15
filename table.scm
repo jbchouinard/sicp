@@ -1,4 +1,5 @@
-
+; Table
+; A simple lookup table
 
 (define (make-table)
   (list 'table 'end))
@@ -10,7 +11,7 @@
   (assert (table? table) "not a table")
   (define (set-iter tbl)
     (cond ((eq? 'end (car tbl)) (insert! tbl (list key value)))
-          ((eq? (caar tbl) key) (set-cdr! (car tbl) (list value)))
+          ((equal? (caar tbl) key) (set-cdr! (car tbl) (list value)))
           (else (set-iter (cdr tbl)))))
   (set-iter (cdr table)))
 
@@ -18,7 +19,7 @@
   (assert (table? table) "not a table")
   (define (get-iter tbl)
     (cond ((eq? 'end (car tbl)) (error "key not found"))
-          ((eq? (caar tbl) key) (cadar tbl))
+          ((equal? (caar tbl) key) (cadar tbl))
           (else (get-iter (cdr tbl)))))
   (get-iter (cdr table)))
 
@@ -26,7 +27,7 @@
   (assert (table? table) "not a table")
   (define (get-iter tbl)
     (cond ((eq? 'end (car tbl)) default)
-          ((eq? (caar tbl) key) (cadar tbl))
+          ((equal? (caar tbl) key) (cadar tbl))
           (else (get-iter (cdr tbl)))))
   (get-iter (cdr table)))
 
@@ -34,7 +35,7 @@
   (assert (table? table) "not a table")
   (define (get-iter tbl)
     (cond ((eq? 'end (car tbl)) false)
-          ((eq? (caar tbl) key) true)
+          ((equal? (caar tbl) key) true)
           (else (get-iter (cdr tbl)))))
   (get-iter (cdr table)))
 
@@ -52,6 +53,13 @@
       (lookup-iter (table-lookup subtbl k) (car ks) (cdr ks))))
   (lookup-iter table (car keys) (cdr keys)))
 
+(define (table-rec-get table keys default)
+  (define (lookup-iter subtbl k ks)
+    (cond ((eq? default subtbl) default)
+          ((null? ks) (table-get subtbl k default))
+          (else (lookup-iter (table-get subtbl k default) (car ks) (cdr ks)))))
+  (lookup-iter table (car keys) (cdr keys)))
+
 (define (table-rec-set! table keys val)
   (define (set-iter subtbl k ks)
     (if (null? ks)
@@ -59,10 +67,10 @@
       (set-iter (table-getset! subtbl k make-table) (car ks) (cdr ks))))
   (set-iter table (car keys) (cdr keys)))
 
-(define (make-put mytable)
+(define (table-make-put mytable)
   (lambda (key1 key2 val)
     (table-rec-set! mytable (list key1 key2) val)))
 
-(define (make-get mytable)
+(define (table-make-get mytable)
   (lambda (key1 key2)
-    (table-rec-lookup mytable (list key1 key2))))
+    (table-rec-get mytable (list key1 key2) false)))
