@@ -14,6 +14,13 @@
    (cond ((number? exp) 0)
          ((variable? exp) (if (same-variable? exp var) 1 0))
          (else ((get 'deriv (operator exp)) (operands exp) var))))
+; a. To assimilate the number and variable types into the dispatch, we would
+; have to give them type tags. Thus we'd have to use our own number and var
+; types instead of the plain built-in ones (e.g. ('number 35) instead of 35.
+
+; d. We would just need to change the order of the arguments in the calls
+; to put in the interface definitions.
+
 (define (operator exp) (car exp))
 (define (operands exp) (cdr exp))
 
@@ -33,9 +40,17 @@
       (make-sum
         (make-product f1 (deriv f2 var))
         (make-product (deriv f1 var) f2))))
+  (define (make-exponent base power)
+    (list '^ base power))
+  (define (deriv-expnt expnt var)
+    (let ((base (car expnt))
+	  (power (cadr expnt)))
+      (make-product (make-product power (deriv base var))
+		    (make-exponent base (- power 1)))))
   ; Interface
   (put 'deriv '+ deriv-sum)
   (put 'deriv '* deriv-product)
+  (put 'deriv '^ deriv-expnt)
   'done)
 
 (define (install-deriv-simplify)
