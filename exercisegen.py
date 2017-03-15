@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 import sys
 
-txt = """; SICP Exercise 2.{i}
-
-(load "~/.schemerc.scm")
+txt = """; SICP Exercise {c}.{i}
 
 (define (reload) (load "{i}.scm"))
 """
 
 if __name__ == '__main__':
-    m = int(sys.argv[1])
-    n = int(sys.argv[2])
+    c = int(sys.argv[1])
+    m = int(sys.argv[2])
+    n = int(sys.argv[3])
 
     for i in range(m, n, 1):
         with open('{}.scm'.format(i), 'w') as f:
-            f.write(txt.format(i=i))
+            f.write(txt.format(i=i, c=c))
