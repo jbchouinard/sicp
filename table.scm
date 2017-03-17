@@ -18,9 +18,12 @@
 (define (table-lookup table key)
   (assert (table? table) "not a table")
   (define (get-iter tbl)
-    (cond ((eq? 'end (car tbl)) (error "key not found"))
-          ((equal? (caar tbl) key) (cadar tbl))
-          (else (get-iter (cdr tbl)))))
+    (cond ((eq? 'end (car tbl))
+            (error "key not found -- TABLE-LOOKUP" key))
+          ((equal? (caar tbl) key)
+            (cadar tbl))
+          (else
+            (get-iter (cdr tbl)))))
   (get-iter (cdr table)))
 
 (define (table-get table key default)
