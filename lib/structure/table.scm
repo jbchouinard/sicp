@@ -1,3 +1,5 @@
+(require "sicp.structure.list")
+
 (define (make-table)
   (list 'table 'end))
 

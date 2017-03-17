@@ -24,11 +24,12 @@
 (define (load-module module)
   (let ((head (car loaded-modules))
         (rest (cdr loaded-modules)))
-    (set-car! loaded-modules el)
+    (set-car! loaded-modules module)
     (set-cdr! loaded-modules (cons head rest)))
-  (load (string-append libpath (string-replace module #\. #\/) ".scm")))
+  (load (string-append libpath (string-replace module #\. #\/) ".scm"))
+  'done)
 
 (define (require module)
   (if (loaded? module)
-    nil
+    'already-loaded
     (load-module module)))

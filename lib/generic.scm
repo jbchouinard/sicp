@@ -1,5 +1,7 @@
 ; Data-directed Generic Programming Package
 
+(require "sicp.structure.table")
+
 (define opstable (make-table))
 (define put (table-make-put opstable))
 (define get (table-make-get opstable))
