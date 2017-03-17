@@ -12,7 +12,7 @@
 ; ------------------------- Utility Procedures -------------------------
 (define (assert val symbol)
   (if (not val)
-      (error "assertion error --" symbol val)))
+      (error "assertion error -- ASSERT" val symbol)))
 
 (define (load-module module)
   (load (string-append libpath (string-replace module #\. #\/) ".scm")))
@@ -26,6 +26,6 @@
 
 (define (nth n lst)
   (cond
-    ((null? lst) (error "NTH -- index too large"))
+    ((null? lst) (error "index too large -- NTH" n lst))
     ((= n 0) (car lst))
     (else (nth (- n 1) (cdr lst)))))
