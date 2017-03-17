@@ -1,3 +1,5 @@
+(require "schemerc")
+
 (define (nth n lst)
   (cond
     ((null? lst) (error "index too large -- NTH" n lst))

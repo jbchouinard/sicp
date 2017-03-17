@@ -1,7 +1,6 @@
 ; SICP Set Package - Ordered List Representation
 
 
-
 (define empty-set '())
 
 (define (element-of-set? x set)

@@ -1,5 +1,6 @@
 ; ------------------------- Symbolic Package - Prefix Notation -------------------------
 
+(require "schemerc")
 (require "sicp.deriv.symbolic-common")
 
 (define (sum? x)

@@ -1,5 +1,6 @@
 ; SICP Base Symbolic Algebra Package
 
+(require "schemerc")
 
 
 ; ------------------------- Helper Procedures -------------------------

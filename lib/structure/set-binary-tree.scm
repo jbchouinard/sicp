@@ -1,5 +1,6 @@
 ; SICP Set Package - Binary Tree Representation
 
+(require "schemerc")
 (require "sicp.structure.binary-tree")
 
 ; ------------------------- Tree Set Procedures -------------------------

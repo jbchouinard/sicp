@@ -1,3 +1,4 @@
+(require "schemerc")
 (require "sicp.arithmetic.common")
 
 (define (make-complex-from-real-imag r i)

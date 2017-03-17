@@ -1,8 +1,6 @@
 ; SICP Picture Language Package
 
 
-
-
 ; ------------------------- Vectors and Segments -------------------------
 ; In the context of this package, a vector (or point) is a pair of x, y coordinates.
 ; A segment is a line defined by a pair of vectors.

@@ -1,3 +1,4 @@
+(require "schemerc")
 (require "sicp.structure.list")
 
 (define (make-table)

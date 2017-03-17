@@ -1,5 +1,6 @@
 ; SICP Interval Arithmetic Package
 
+(require "schemerc")
 (require "sicp.arithmetic.common")
 
 

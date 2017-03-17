@@ -1,5 +1,6 @@
 ; SICP Math Package
 
+(require "schemerc")
 (require "sicp.func")
 
 

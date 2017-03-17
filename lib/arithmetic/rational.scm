@@ -1,4 +1,6 @@
 ; Rational Arithmetic
+
+(require "schemerc")
 (require "sicp.arithmetic.common")
 
 (define (make-rational . args)

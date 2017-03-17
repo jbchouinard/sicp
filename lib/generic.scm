@@ -1,5 +1,6 @@
 ; Data-directed Generic Programming Package
 
+(require "schemerc")
 (require "sicp.structure.table")
 
 (define opstable (make-table))

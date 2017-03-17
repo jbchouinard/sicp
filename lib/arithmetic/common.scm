@@ -1,4 +1,5 @@
 ; Arithmetic Common
+(require "schemerc")
 (require "sicp.generic")
 
 ; For printing

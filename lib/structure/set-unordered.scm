@@ -1,7 +1,6 @@
 ; SICP Set Package - Unordered List Representation
 
 
-
 (define empty-set '())
 
 (define (make-set . x)
