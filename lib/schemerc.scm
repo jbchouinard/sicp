@@ -1,10 +1,8 @@
 ; Scheme Customizations
 
 
-; ------------------------- Names -------------------------
-(define true #t)
-(define false #f)
 (define nil '())
+
 
 ; ------------------------- Debug ------------------------
 (define debug false)
@@ -12,6 +10,7 @@
 (define (assert val symbol)
   (if (not val)
       (error "assertion error -- ASSERT" val symbol)))
+
 
 ; ------------------------- Module Management -------------------------
 (define libpath "~/.local/lib/scheme/")
