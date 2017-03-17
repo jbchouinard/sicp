@@ -1,9 +1,6 @@
 ; Huffman Encoding Package
 ; From SICP s2.3
 
-
-
-
 ; Tree procedures
 (define (make-leaf symbol weight)
     (list 'leaf symbol weight))

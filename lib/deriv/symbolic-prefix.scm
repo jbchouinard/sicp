@@ -1,8 +1,6 @@
 ; ------------------------- Symbolic Package - Prefix Notation -------------------------
 
-
-
-(load-module "sicp.symbolic-common")
+(require "sicp.deriv.symbolic-common")
 
 (define (sum? x)
   (and (pair? x) (eq? (car x) '+)))

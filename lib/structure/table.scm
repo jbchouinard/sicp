@@ -1,6 +1,3 @@
-; Table
-; A simple lookup table
-
 (define (make-table)
   (list 'table 'end))
 

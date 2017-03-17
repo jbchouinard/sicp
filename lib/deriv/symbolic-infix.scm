@@ -1,8 +1,6 @@
 ; ------------------------- Symbolic Package - Infix Notation -------------------------
 
-
-
-(load-module "sicp.symbolic-common")
+(require "sicp.deriv.symbolic-common")
 
 (define (sum? x)
   (not (eq? #f (memq '+ x))))

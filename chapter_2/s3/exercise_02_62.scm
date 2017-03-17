@@ -1,11 +1,10 @@
 ; SICP Exercise 2.62
 
-
+(require "sicp.structure.set-ordered")
 
 (define (reload) (load "exercise_02_62.scm"))
 (define (load-next) (load "exercise_02_63.scm"))
 
-(load-module "sicp.set-ordered")
 
 (define (union-set s1 s2)
   (define (union-iter sin1 sin2 sout)

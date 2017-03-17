@@ -1,8 +1,6 @@
 ; SICP Interval Arithmetic Package
 
-
-
-(load-module "sicp.math")
+(require "sicp.math")
 
 (define (sub x y)
   (make-interval (- (lower-bound x) (upper-bound y))

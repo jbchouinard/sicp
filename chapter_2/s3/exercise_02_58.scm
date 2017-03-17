@@ -1,8 +1,6 @@
 ; SICP Exercise 2.58
 
-
-
-(load-module "sicp.symbolic-common")
+(require "sicp.deriv.symbolic-common")
 
 ; a. Infix notation, binary operators
 (define (sum? x)

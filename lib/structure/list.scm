@@ -1,8 +1,15 @@
-; SICP Data Manipulation Package
+(define (nth n lst)
+  (cond
+    ((null? lst) (error "index too large -- NTH" n lst))
+    ((= n 0) (car lst))
+    (else (nth (- n 1) (cdr lst)))))
 
+(define (insert! lst el)
+  (let ((head (car lst))
+        (rest (cdr lst)))
+    (set-car! lst el)
+    (set-cdr! lst (cons head rest))))
 
-
-; ------------------------- List Operations -------------------------
 (define (for-earch f lst)
   (cond ((null? lst) #t)
         (else (f (car lst))
@@ -57,43 +64,6 @@
       (iter (+ n step) (cons n lst))))
   (reverse (iter low nil)))
 
-(define (range-1 low high)
-  (range low high 1))
-
 ; Map procedure and flattens a list of list to a list
 (define (flatmap proc seq)
   (fold-right append nil (map proc seq)))
-
-
-; ------------------------- Tree Operations -------------------------
-(define (enumerate-tree tree)
-  (cond ((null? tree) nil)
-        ((not (pair? tree)) (list tree))
-        (else (append (enumerate-tree (car tree))
-                      (enumerate-tree (cdr tree))))))
-
-(define (count-leaves t)
-  (fold-right + 0 (map (lambda (x) 1) (enumerate-tree t))))
-
-(define (tree-map f tree)
- (define (tree-map-inner tr)
-  (cond ((null? tr) nil)
-        ((not (pair? tr)) (f tr))
-        (else (map tree-map-inner tr))))
-  (tree-map-inner tree))
-
-
-; ------------------------- Matrix Operations -------------------------
-(define (dot-product v w)
-  (fold-right + 0 (map * v w)))
-
-(define (matrix-*-vector m v)
-  (map (lambda (x) (dot-product v x)) m))
-
-(define (transpose mat)
-  (fold-right-n cons nil mat))
-
-(define (matrix-*-matrix m n)
-  (let ((cols (transpose n)))
-    (map (lambda (v) (matrix-*-vector cols v)) m)))
-

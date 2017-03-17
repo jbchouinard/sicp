@@ -1,6 +1,6 @@
 ; SICP Exercise 2.74
 
-(load-module "sicp.table")
+(require "sicp.structure.table")
 
 (define opstable (make-table))
 (define get (table-make-get opstable))

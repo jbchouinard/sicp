@@ -1,8 +1,7 @@
 ; SICP Exercise 2.64
 
+(require "sicp.structure.set-binary-tree")
 
-
-(load-module "sicp.set-binary-tree")
 (define (reload) (load "exercise_02_64.scm"))
 (define (load-next) (load "exercise_02_65.scm"))
 

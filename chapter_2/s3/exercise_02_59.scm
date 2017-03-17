@@ -1,11 +1,10 @@
 ; SICP Exercise 2.59
 
-
+(require "sicp.structure.set-unordered")
 
 (define (reload) (load "exercise_02_59.scm"))
 (define (load-next) (load "exercise_02_60.scm"))
 
-(load-module "sicp.set-unordered")
 
 (define (union-set s1 s2)
   (cond ((null? s1) s2)

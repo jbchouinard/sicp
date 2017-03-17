@@ -1,11 +1,10 @@
 ; SICP Exercise 2.61
 
-
+(require "sicp.structure.set-ordered")
 
 (define (reload) (load "exercise_02_61.scm"))
 (define (load-next) (load "exercise_02_62.scm"))
 
-(load-module "sicp.set-ordered")
 
 (define (adjoin-set x set)
   (cond ((null? set) (list x))
