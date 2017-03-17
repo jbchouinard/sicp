@@ -10,6 +10,6 @@ if __name__ == '__main__':
     m = int(sys.argv[2])
     n = int(sys.argv[3])
 
-    for i in range(m, n, 1):
+    for i in range(m, n+1, 1):
         with open('{}.scm'.format(i), 'w') as f:
             f.write(txt.format(i=i, c=c))
