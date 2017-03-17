@@ -13,7 +13,7 @@
   (if (not val)
       (error "assertion error -- ASSERT" val symbol)))
 
-; ------------------------- Module Mangement -------------------------
+; ------------------------- Module Management -------------------------
 (define libpath "~/.local/lib/scheme/")
 
 (define loaded-modules (list "schemerc"))
