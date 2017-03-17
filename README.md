@@ -26,3 +26,10 @@ Configure the libpath in schemerc.scm. By default it is `~/.local/lib/scheme`.
 The SICP modules are expected to be found in `LIBPATH/sicp`. Copy them there
 or set up a symbolic link.
 
+I find it convenient to configure this alias:
+
+```
+alias scheme="rlwrap mit-scheme --load ../path/to/schemerc.scm"
+```
+
+rlwrap is a readline wrapper, it makes using the REPL much more fun.
