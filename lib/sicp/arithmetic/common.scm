@@ -16,6 +16,7 @@
 (define scheme-mul *)
 (define scheme-sub -)
 (define scheme-div /)
+(define scheme-equ? =)
 
 (define (+ . ns)
   (define (add x y) (apply-generic 'add (list x y)))
@@ -45,6 +46,12 @@
     (recip n)
     (fold-left div n ns)))
 
+(define (= x y)
+  (apply-generic 'equ? (list x y)))
+
+(define (zero? x)
+  (apply-generic 'zero? (list x)))
+
 
 (define (make-scheme-number n)
   (make-generic 'make 'scheme-number (list n)))
@@ -58,6 +65,10 @@
     (lambda (x) (tag (scheme-sub x))))
   (put 'recip '(scheme-number)
     (lambda (x) (tag (scheme-div x))))
+  (put 'equ? '(scheme-number scheme-number)
+    (lambda (x y) (tag (scheme-equ? x y))))
+  (put 'zero? '(scheme-number)
+    (lambda (x) (tag (scheme-equ? 0 x))))
   (put 'add '(scheme-number scheme-number)
     (lambda (x y) (tag (scheme-add x y))))
   (put 'sub '(scheme-number scheme-number)

@@ -20,6 +20,11 @@
           (else (error "wrong number of args -- MAKE-RAT-POLY" args))))
   (define num car)  ; get numerator
   (define dnm cdr)  ; get denominator
+  (define (equ?-rat r1 r2)
+    (and (= (num r1) (num r2))
+         (= (dnm r1) (dnm r2))))
+  (define (zero?-rat r)
+    (= 0 (num r)))
   (define (neg-rat r) (make-rat (- (num r)) (dnm r)))
   (define (recip-rat r) (make-rat (dnm r) (num r)))
   (define (add-rat r1 r2)
@@ -42,6 +47,8 @@
   ; Interface
   (put 'make 'rational
     (lambda args (tag (make-rat-poly args))))
+  (put 'equ? '(rational rational) equ?-rat)
+  (put 'zero? '(rational) zero?-rat)
   (put 'neg '(rational)
     (lambda (r) (tag (neg-rat r))))
   (put 'recip '(rational)
