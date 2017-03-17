@@ -27,8 +27,8 @@
         (error "not implemented -- APPLY-GENERIC" op types)
         (apply func vals)))))
 
-(define (make-generic type args)
-  (let ((func (get 'make type)))
+(define (make-generic op type args)
+  (let ((func (get op type)))
     (if (eq? false func)
       (error "not implemented -- MAKE-GENERIC" type)
       (apply func args))))

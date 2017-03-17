@@ -2,7 +2,7 @@
 (require "sicp.arithmetic.common")
 
 (define (make-rational . args)
-  (make-generic 'rational args))
+  (make-generic 'make 'rational args))
 
 ((lambda () ; Install rational number operations
   ; Implementation
@@ -33,6 +33,10 @@
               (* (dnm r1) (dnm r2))))
   (define (div-rat r1 r2)
     (mul-rat r1 (recip-rat r2)))
+  (define (print-rat r)
+    (print (num r))
+    (display "/")
+    (print (dnm r)))
   ; Interface
   (put 'make 'rational
     (lambda args (tag (make-rat-poly args))))
@@ -48,4 +52,5 @@
     (lambda (r1 r2) (tag (mul-rat r1 r2))))
   (put 'div '(rational rational)
     (lambda (r1 r2) (tag (div-rat r1 r2))))
+  (put 'print '(rational) print-rat)
   'done))

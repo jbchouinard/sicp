@@ -1,6 +1,16 @@
 ; Arithmetic Common
 (require "sicp.generic")
 
+; For printing
+(define print-precision 4)
+
+(define (round-decimals x n)
+  (let ((k (expt 10.0 n)))
+    (/ (round (* x k)) k)))
+
+(define (print x)
+  (apply-generic 'print (list x)))
+
 (define scheme-add +)
 (define scheme-mul *)
 (define scheme-sub -)
@@ -34,8 +44,9 @@
     (recip n)
     (fold-left div n ns)))
 
+
 (define (make-scheme-number n)
-  (make-generic 'scheme-number (list n)))
+  (make-generic 'make 'scheme-number (list n)))
 
 ((lambda () ; Install scheme number operations
   ; Implementation
@@ -56,4 +67,5 @@
     (lambda (x y) (tag (scheme-mul x y))))
   (put 'div '(scheme-number scheme-number)
     (lambda (x y) (tag (scheme-div x y))))
+  (put 'print '(scheme-number) display)
   'done))
