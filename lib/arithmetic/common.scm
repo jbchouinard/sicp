@@ -6,20 +6,30 @@
 (define scheme-sub -)
 (define scheme-div /)
 
-(define (neg x) (apply-generic 'neg (list x)))
-(define (recip x) (apply-generic 'recip (list x)))
-(define (add x y) (apply-generic 'add (list x y)))
-(define (sub x y) (apply-generic 'sub (list x y)))
-(define (mul x y) (apply-generic 'mul (list x y)))
-(define (div x y) (apply-generic 'div (list x y)))
+(define (+ . ns)
+  (define (add x y) (apply-generic 'add (list x y)))
+  (cond
+    ((null? ns) 0)
+    (else
+      (fold-left add (car ns) (cdr ns)))))
 
-(define (+ . ns) (fold-left add 0 ns))
-(define (* . ns) (fold-left mul 1 ns))
+(define (* . ns)
+  (define (mul x y) (apply-generic 'mul (list x y)))
+  (cond
+    ((null? ns) 1)
+    (else
+      (fold-left mul (car ns) (cdr ns)))))
+
 (define (- n . ns)
+  (define (neg x) (apply-generic 'neg (list x)))
+  (define (sub x y) (apply-generic 'sub (list x y)))
   (if (null? ns)
     (neg n)
     (fold-left sub n ns)))
+
 (define (/ n . ns)
+  (define (recip x) (apply-generic 'recip (list x)))
+  (define (div x y) (apply-generic 'div (list x y)))
   (if (null? ns)
     (recip n)
     (fold-left div n ns)))
@@ -27,7 +37,7 @@
 (define (make-scheme-number n)
   (make-generic 'scheme-number (list n)))
 
-(define (install-scheme-number)
+((lambda () ; Install scheme number operations
   ; Implementation
   (define (tag item) item)
   ; Interface
@@ -46,4 +56,4 @@
     (lambda (x y) (tag (scheme-mul x y))))
   (put 'div '(scheme-number scheme-number)
     (lambda (x y) (tag (scheme-div x y))))
-  'done)
+  'done))

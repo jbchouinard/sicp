@@ -1,10 +1,10 @@
 ; Rational Arithmetic
-(require "sicp.generic")
+(require "sicp.arithmetic.common")
 
-(define (make-rational n d)
-  (make-generic 'rational (list n d)))
+(define (make-rational . args)
+  (make-generic 'rational args))
 
-(define (install-rational)
+((lambda () ; Install rational number operations
   ; Implementation
   (define (tag item) (attach-tag 'rational item))
   (define (make-rat num dnm)
@@ -12,6 +12,10 @@
       (error "division by zero -- MAKE-RAT" num dnm)
       (let ((d (gcd num dnm)))
         (cons (/ num d) (/ dnm d)))))
+  (define (make-rat-poly args)
+    (cond ((= (length args) 1) (make-rat (car args) 1))
+          ((= (length args) 2) (make-rat (car args) (cadr args)))
+          (else (error "wrong number of args -- MAKE-RAT-POLY" args))))
   (define num car)  ; get numerator
   (define dnm cdr)  ; get denominator
   (define (neg-rat r) (make-rat (- (num r)) (dnm r)))
@@ -31,11 +35,11 @@
     (mul-rat r1 (recip-rat r2)))
   ; Interface
   (put 'make 'rational
-    (lambda (n d) (tag (make-rat n d))))
+    (lambda args (tag (make-rat-poly args))))
   (put 'neg '(rational)
-    (lambda (r) (tag (neg-rat r)))
+    (lambda (r) (tag (neg-rat r))))
   (put 'recip '(rational)
-    (lambda (r) (tag (recip r)))
+    (lambda (r) (tag (recip-rat r))))
   (put 'add '(rational rational)
     (lambda (r1 r2) (tag (add-rat r1 r2))))
   (put 'sub '(rational rational)
@@ -44,4 +48,4 @@
     (lambda (r1 r2) (tag (mul-rat r1 r2))))
   (put 'div '(rational rational)
     (lambda (r1 r2) (tag (div-rat r1 r2))))
-  'done)
+  'done))
