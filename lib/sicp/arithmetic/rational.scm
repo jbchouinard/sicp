@@ -44,6 +44,8 @@
     (print (num r))
     (display "/")
     (print (dnm r)))
+  (define (rational->scheme-number r)
+    (/ (num r) (dnm r)))
   ; Interface
   (put 'make 'rational
     (lambda args (tag (make-rat-poly args))))
@@ -62,4 +64,5 @@
   (put 'div '(rational rational)
     (lambda (r1 r2) (tag (div-rat r1 r2))))
   (put 'print '(rational) print-rat)
+  (put-coercion 'rational 'scheme-number rational->scheme-number)
   'done))
