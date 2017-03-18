@@ -25,13 +25,18 @@
   (cons tag content))
 
 (define (apply-generic op args)
+  (if debug
+    (begin
+      (display (list 'apply-generic op args))
+      (display "\n"))
+    nil)
   (let ((types (map get-tag args))
         (vals (map get-content args)))
     (let ((func (get op types)))
       (cond
         (func
           (apply func vals))
-        ((= (length args) 2)
+        ((and (= (length args) 2) (not (eq? (car types) (cadr types))))
           (let ((t1 (car types))
                 (t2 (cadr types))
                 (a1 (car args))
