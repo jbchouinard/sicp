@@ -1,29 +1,8 @@
-; Data-directed Generic Programming Package
+; SICP Exercise 2.82
 
-(require "schemerc")
 (require "sicp.structure.list")
-(require "sicp.structure.table")
+(require "sicp.generic")
 
-(define generic-ops-table (make-table))
-(define put (table-make-put generic-ops-table))
-(define get (table-make-get generic-ops-table))
-
-(define generic-coercion-table (make-table))
-(define put-coercion (table-make-put generic-coercion-table))
-(define get-coercion (table-make-get generic-coercion-table))
-
-(define (get-tag item)
-  (if (number? item)
-    'scheme-number
-    (car item)))
-
-(define (get-content item)
-  (if (number? item)
-    item
-    (cdr item)))
-
-(define (attach-tag tag content)
-  (cons tag content))
 
 ; Try to find a coercion for provided operation and argument types
 ; Returns: a list of coercion procedures
@@ -60,9 +39,3 @@
               (apply-generic op (map-apply coercions (map list vals))))))
         (else
           (error "not implemented -- APPLY-GENERIC" op types))))))
-
-(define (make-generic op type args)
-  (let ((func (get op type)))
-    (if (eq? false func)
-      (error "not implemented -- MAKE-GENERIC" type)
-      (apply func args))))

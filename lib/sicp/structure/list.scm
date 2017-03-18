@@ -69,3 +69,12 @@
 ; Map procedure and flattens a list of list to a list
 (define (flatmap proc seq)
   (fold-right append nil (map proc seq)))
+
+(define (all-equal? lst)
+  (let ((first (car lst))
+        (rest (cdr lst)))
+    (every (lambda (x) (equal? x first)) rest)))
+
+; Apply a list of procedures to a list of arguments
+(define (map-apply procs args)
+  (map (lambda (p) (apply (car p) (cadr p))) (zip procs args)))

@@ -3,6 +3,8 @@
 
 (define nil '())
 
+(define id (lambda (x) x))
+
 
 ; ------------------------- Debug ------------------------
 (define debug false)

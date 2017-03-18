@@ -55,6 +55,8 @@
          (display " + "))
        (print (abs b))
        (display "i")))
+   (define (number->complex n)
+     (make-from-real-imag n 0))
    ; Interface
    (put 'make-from-real-imag 'complex
      (lambda (r i) (tag (make-from-real-imag r i))))
@@ -79,6 +81,8 @@
    (put 'div '(complex complex)
      (lambda (c1 c2) (tag (div-complex c1 c2))))
    (put 'print '(complex) print-complex)
+   (put-coercion 'scheme-number 'complex
+     (lambda (n) (tag (number->complex n))))
    'done))
 
 ((lambda () ; Install complex rectangular package
